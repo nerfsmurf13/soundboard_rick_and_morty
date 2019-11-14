@@ -161,7 +161,7 @@ var init_cards = () => {
         //titlearea.classList.add += ;
         titlearea.className += "soundcardtitle " + charactors[x].class;
         if (document.URL.includes('github')) {
-            titlearea.style.backgroundImage = "url(" + rawgit + charactors[x].img + ")";
+            titlearea.style.backgroundImage = "url(" + rawgit + charactors[x].img.substring(3) + ")";
         } else {
             titlearea.style.backgroundImage = "url(" + charactors[x].img + ")";
             console.log("url(" + rawgit + charactors[x].img.substring(3) + ")")
