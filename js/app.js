@@ -128,31 +128,16 @@ function playSound(clip) {
     if (document.URL.includes('127.0.0')) {
         sound.src = "../sounds/" + clip;
     } else {
-        sound.src = onlineResource + clip;
+        sound.src = onlineResource + "sounds/" + clip;
         console.log(sound.src)
-            //console.log("url(" + rawgit + charactors[x].img.substring(3) + ")")
     }
-    //sound.src = "../sounds/" + clip;
     sound.play();
 }
 const audioCheck = (arr, val) => {
     var values = audioGet(arr, val);
     filename = arr[values.char].clips[values.clip].filename;
     playSound(filename);
-    //return parseFloat(values.char) + parseFloat(values.clip);
 };
-
-// loadedClip = (x, y) => {
-//     playSound(clip);
-// };
-
-// const loadClips = () => {
-//     for (x = 0; x < char_num; x++) {
-//         for (y = 0; y < Object.keys(charactors[x].clips).length; y++) {
-//             soundClips.push(charactors[x].clips[y]);
-//         }
-//     }
-// };
 
 var init_cards = () => {
     let char_num = charactors.length;
