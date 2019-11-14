@@ -8,18 +8,7 @@ const sound = new Audio();
 
 const onlineResource = "http://edwardwilliams.me/resources/"
 
-function playSound(clip) {
-    console.log("sound playing");
-    if (document.URL.includes('127.0.0')) {
-        sound.src = "../sounds/" + clip;
-    } else {
-        sound.src = onlineResource + clip.substring(1);
-        console.log(onlineResource + clip.substring(1))
-            //console.log("url(" + rawgit + charactors[x].img.substring(3) + ")")
-    }
-    sound.src = "../sounds/" + clip;
-    sound.play();
-}
+
 
 const charactors = [
     (rick = {
@@ -134,6 +123,18 @@ const audioGet = (arr, val) => {
     }
 };
 
+function playSound(clip) {
+    console.log("sound playing");
+    if (document.URL.includes('127.0.0')) {
+        sound.src = "../sounds/" + clip;
+    } else {
+        sound.src = onlineResource + clip;
+        console.log(sound.src)
+            //console.log("url(" + rawgit + charactors[x].img.substring(3) + ")")
+    }
+    //sound.src = "../sounds/" + clip;
+    sound.play();
+}
 const audioCheck = (arr, val) => {
     var values = audioGet(arr, val);
     filename = arr[values.char].clips[values.clip].filename;
@@ -141,17 +142,17 @@ const audioCheck = (arr, val) => {
     //return parseFloat(values.char) + parseFloat(values.clip);
 };
 
-loadedClip = (x, y) => {
-    playSound(clip);
-};
+// loadedClip = (x, y) => {
+//     playSound(clip);
+// };
 
-const loadClips = () => {
-    for (x = 0; x < char_num; x++) {
-        for (y = 0; y < Object.keys(charactors[x].clips).length; y++) {
-            soundClips.push(charactors[x].clips[y]);
-        }
-    }
-};
+// const loadClips = () => {
+//     for (x = 0; x < char_num; x++) {
+//         for (y = 0; y < Object.keys(charactors[x].clips).length; y++) {
+//             soundClips.push(charactors[x].clips[y]);
+//         }
+//     }
+// };
 
 var init_cards = () => {
     let char_num = charactors.length;
@@ -183,7 +184,7 @@ var init_cards = () => {
             list.appendChild(soundButton);
             addEventListener("click", e => {
                 if (e.target.id === soundButton.id) {
-                    console.log(e.target.id);
+                    //console.log(e.target.id);
                     audioCheck(charactors, e.target.id);
                     // console.log(audioCheck(soundClips, soundButton.id));
                     // pos = soundClips
