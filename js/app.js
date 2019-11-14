@@ -6,6 +6,7 @@ const dir = "../sounds/";
 
 const sound = new Audio();
 
+const rawgit = "https://raw.githubusercontent.com/nerfsmurf13/soundboard_rick_and_morty/"
 
 function playSound(clip) {
     console.log("sound playing");
@@ -17,7 +18,7 @@ const charactors = [
     (rick = {
         name: "Rick",
         class: "rick",
-        img: "../images/rick.png",
+        img: rawgit + "rick.png",
         clips: {
             0: {
                 title: "Tiny Rick",
