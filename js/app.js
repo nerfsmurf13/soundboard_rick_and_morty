@@ -6,7 +6,7 @@ const dir = "../sounds/";
 
 const sound = new Audio();
 
-const rawgit = "https://raw.githubusercontent.com/nerfsmurf13/soundboard_rick_and_morty/master/"
+const onlineResource = "http://edwardwilliams.me/resources/"
 
 function playSound(clip) {
     console.log("sound playing");
@@ -160,11 +160,11 @@ var init_cards = () => {
         title.textContent = charactors[x].name;
         //titlearea.classList.add += ;
         titlearea.className += "soundcardtitle " + charactors[x].class;
-        if (document.URL.includes('github')) {
-            titlearea.style.backgroundImage = "url(" + rawgit + charactors[x].img.substring(3) + ")";
-        } else {
+        if (document.URL.includes('127.0.0')) {
             titlearea.style.backgroundImage = "url(" + charactors[x].img + ")";
-            console.log("url(" + rawgit + charactors[x].img.substring(3) + ")")
+        } else {
+            titlearea.style.backgroundImage = "url(" + onlineResource + charactors[x].img.substring(1) + ")";
+            //console.log("url(" + rawgit + charactors[x].img.substring(3) + ")")
         }
 
         card.appendChild(titlearea);
