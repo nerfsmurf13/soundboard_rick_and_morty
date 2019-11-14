@@ -10,6 +10,13 @@ const onlineResource = "http://edwardwilliams.me/resources/"
 
 function playSound(clip) {
     console.log("sound playing");
+    if (document.URL.includes('127.0.0')) {
+        sound.src = "../sounds/" + clip;
+    } else {
+        sound.src = onlineResource + clip.substring(1);
+        console.log(onlineResource + clip.substring(1))
+            //console.log("url(" + rawgit + charactors[x].img.substring(3) + ")")
+    }
     sound.src = "../sounds/" + clip;
     sound.play();
 }
