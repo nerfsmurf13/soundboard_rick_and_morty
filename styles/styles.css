@@ -1,7 +1,20 @@
+:root {
+    --manin-bg-color: #3D373C;
+    --bg-lite: #E7E0DB;
+    --h1-inner: #83D2E4;
+    --h1-outter: #8BCF21;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
 body {
     text-align: center;
     margin: 0;
     padding: 0;
+    background-color: var(--manin-bg-color);
 }
 
 #container {
@@ -11,19 +24,36 @@ body {
     width: 100vp;
 }
 
+h1 {
+    font-family: 'Creepster', cursive;
+    font-size: 6rem;
+    color: var(--h1-inner);
+    text-shadow: 0px 0px 10px var(--h1-outter);
+    -webkit-text-stroke: 1px black;
+}
+
 h1,
 h2 {
     margin: 0;
 }
 
+p {
+    color: #fff;
+    font-size: 1.5rem;
+}
+
 ul {
     list-style-type: none;
-    margin: 20px 0;
+    margin: 0;
     padding: 0;
 }
 
 ul li {
     margin: 5px;
+    padding: 5px;
+    background-color: yellowgreen;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 ul li:hover {
@@ -32,11 +62,16 @@ ul li:hover {
 }
 
 .soundcard {
+    border-radius: 10px;
+    border-width: 0px;
+    overflow: hidden;
     width: 200px;
     margin: 10px;
     text-align: center;
-    min-height: 300px;
+    min-height: 200px;
     border: 2px solid lightgray;
+    background-color: var(--bg-lite);
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
 }
 
 .soundcardtitle {
