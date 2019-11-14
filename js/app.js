@@ -1,14 +1,6 @@
-let test = "Javascript Loaded";
-console.log(test);
-
-soundClips = [];
+var soundClips = [];
 const dir = "../sounds/";
-
-const sound = new Audio();
-
 const onlineResource = "http://edwardwilliams.me/resources/"
-
-
 
 const charactors = [
     (rick = {
@@ -108,12 +100,8 @@ const char_num = charactors.length;
 //Works with click listener to compare clicked element vs sound
 const audioGet = (arr, val) => {
     for (x = 0; x < char_num; x++) {
-        console.log("Checking " + charactors[x].name);
         for (y = 0; y < Object.keys(arr[x].clips).length; y++) {
-            console.log("Checking " + arr[x].clips[y].class);
             if (Object.values(arr[x].clips[y]).includes(val)) {
-                console.log("Match Found " + arr[x].clips[y].class + " vs " + val);
-                console.log(y, x);
                 return {
                     char: x,
                     clip: y,
@@ -123,16 +111,18 @@ const audioGet = (arr, val) => {
     }
 };
 
+const sound = new Audio();
+
+// Audio Step 2 == Filename taken from step 1 and depending if ran locally, points to local sound location or hosted sound)
 function playSound(clip) {
-    console.log("sound playing");
     if (document.URL.includes('127.0.0')) {
         sound.src = "../sounds/" + clip;
     } else {
         sound.src = onlineResource + "sounds/" + clip;
-        console.log(sound.src)
     }
     sound.play();
 }
+// Audio Step 1 == Works with click listener to get clip name from dom id (mistakenly called class in clips object)
 const audioCheck = (arr, val) => {
     var values = audioGet(arr, val);
     filename = arr[values.char].clips[values.clip].filename;
@@ -141,7 +131,6 @@ const audioCheck = (arr, val) => {
 
 var init_cards = () => {
     let char_num = charactors.length;
-    let card_zero = document.querySelector(".jscontainer");
     let container = document.querySelector("#container")
 
     for (x = 0; x < char_num; x++) {
@@ -151,13 +140,11 @@ var init_cards = () => {
         let list = document.createElement("UL");
 
         title.textContent = charactors[x].name;
-        //titlearea.classList.add += ;
         titlearea.className += "soundcardtitle " + charactors[x].class;
         if (document.URL.includes('127.0.0')) {
             titlearea.style.backgroundImage = "url(" + charactors[x].img + ")";
         } else {
             titlearea.style.backgroundImage = "url(" + onlineResource + charactors[x].img.substring(1) + ")";
-            //console.log("url(" + rawgit + charactors[x].img.substring(3) + ")")
         }
 
         card.appendChild(titlearea);
@@ -169,29 +156,13 @@ var init_cards = () => {
             list.appendChild(soundButton);
             addEventListener("click", e => {
                 if (e.target.id === soundButton.id) {
-                    //console.log(e.target.id);
                     audioCheck(charactors, e.target.id);
-                    // console.log(audioCheck(soundClips, soundButton.id));
-                    // pos = soundClips
-                    // 	.map(e => {
-                    // 		console.log(e.clips);
-                    // 		return e.clips;
-                    // 	})
-                    // 	.indexOf(e.target.id);
-                    // console.log(pos);
-                    //e.playSound(charactors[x].clips[y].filename);
                 }
             });
         }
         titlearea.appendChild(title);
-        // let titletext = document.createTextNode(charactors[x].name)
-        //titlearea.appendChild(titletext)
         container.appendChild(card);
         card.className = "soundcard";
-        //card.div.soundcard.appendChild('soundcardtitle')
-        //card.appendChild('soundcardtitle ' + charactors[x].name.toLowerCase())
-        // card.className +=
-        //document.getElementById('soundcard').appendChild(soundcard)
     }
 };
 
