@@ -1,0 +1,72 @@
+body {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+#container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100vp;
+}
+
+h1,
+h2 {
+    margin: 0;
+}
+
+ul {
+    list-style-type: none;
+    margin: 20px 0;
+    padding: 0;
+}
+
+ul li {
+    margin: 5px;
+}
+
+ul li:hover {
+    color: white;
+    background-color: gray;
+}
+
+.soundcard {
+    width: 200px;
+    margin: 10px;
+    text-align: center;
+    min-height: 300px;
+    border: 2px solid lightgray;
+}
+
+.soundcardtitle {
+    color: white;
+    height: 200px;
+    /* background-position: center; */
+    background-size: 200px auto;
+    text-shadow: 0 0 5px #000;
+}
+
+.rick {
+    background-image: url('../images/rick.png');
+}
+
+.morty {
+    background-image: url('../images/morty.jpg');
+}
+
+.meeseeks {
+    background-image: url('../images/meeseeks.png');
+}
+
+.armagheadon {
+    background-image: url('../images/armagheadon.png');
+}
+
+.scary-terry {
+    background-image: url('../images/scary_terry.jpg');
+}
+
+.mailman {
+    background-image: url('../images/mailman.jpg');
+}
