@@ -62,6 +62,40 @@ const charactors = [
 			},
 		},
 	}),
+	(scaryterry = {
+		name: "Scary Terry",
+		class: "scary-terry",
+		img: "../images/scary_terry.jpg",
+		clips: {
+			0: {
+				title: "Awww Bitch",
+				class: "aw-bitch",
+				filename: "Awww_Bitch.wav",
+			},
+			1: {
+				title: "Scary Terry",
+				class: "scary-terry",
+				filename: "scary_terry.mp3",
+			},
+		},
+	}),
+	(other = {
+		name: "Other",
+		class: "other",
+		img: "../images/mailman.jpg",
+		clips: {
+			0: {
+				title: "My Man!",
+				class: "my-man",
+				filename: "my_man.wav",
+			},
+			1: {
+				title: "Ants in my eyes",
+				class: "ants-in-my-eyes",
+				filename: "I'm_ants_in_my_eye_johnson.wav",
+			},
+		},
+	}),
 ];
 const char_num = charactors.length;
 
